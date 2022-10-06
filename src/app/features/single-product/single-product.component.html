@@ -1,0 +1,21 @@
+<ng-container *ngIf="(currentProduct | async) as product">
+    <div class="products">
+        <div class="imag-container">
+            <img src="{{product.image}}" alt="">
+        </div>
+        <div class="details">
+            <span>
+                {{product.price}}
+            </span>
+            <span>
+                {{product.title}}
+            </span>
+            <span>
+                {{product.description}}
+            </span>
+            <span>
+                {{product.rating.rate}}
+            </span>
+        </div>
+    </div>
+</ng-container>

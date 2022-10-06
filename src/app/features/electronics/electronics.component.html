@@ -1,0 +1,11 @@
+<div class="container" *ngFor="let item of electronics">
+    <div class="wrapper">
+        <div class="img-container">
+            <img src="{{item.image}}" alt="">
+        </div>
+        <div class="details">
+            <span>{{item.title}}</span>
+            <span>Price {{item.price}}$</span>
+            <span>Rate {{item.rating.rate}}🌟</span>
+    </div>
+</div>

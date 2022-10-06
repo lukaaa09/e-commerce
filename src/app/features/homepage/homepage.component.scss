@@ -1,0 +1,45 @@
+body {
+    background-color: rgb(213, 204, 187);
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 1400px;
+    margin: 20px auto;
+
+
+}
+
+.container-single {
+    width: 250px;
+    height: 360px;
+    margin: 40px;
+    overflow: hidden;
+    padding: 60px;
+    border-radius: 10px;
+    // background-color: #a6a4a4;
+    gap: 55px;
+
+    img {
+        width: 220px;
+        height: 270px;
+        border-radius: 30px;
+        
+    }
+
+}
+
+button{ 
+    cursor: pointer;
+}
+
+.container-description{
+    display: flex;
+    flex-direction: column;
+}
+ul, li {
+    cursor: pointer;
+}
