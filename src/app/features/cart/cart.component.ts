@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { tap } from 'rxjs';
+import { BehaviorSubject, tap } from 'rxjs';
 import { CartService } from 'src/app/core/services/cart.service';
 
 @Component({
@@ -19,5 +19,10 @@ export class CartComponent implements OnInit {
       })
     ).subscribe()
   }
-
+  public removeItem(item: any) {
+    this.cartService.removeCartItem(item)
+  }
+  public removeAll() {
+    this.cartService.removeAll()
+  }
 }

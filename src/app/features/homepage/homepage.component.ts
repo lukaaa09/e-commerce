@@ -40,6 +40,7 @@ export class HomepageComponent implements OnInit {
   }
   public addToCart(item: any) {
     this.cartservice.addToCart(item);
+    alert('are you sure')
   }
 
   public getproduct(id: number) {
