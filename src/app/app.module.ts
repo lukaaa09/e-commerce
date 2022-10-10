@@ -14,7 +14,8 @@ import { SearchBodyComponent } from './features/search-body/search-body.componen
 import { ElectronicsComponent } from './features/electronics/electronics.component';
 import { MensClothingComponent } from './features/mens-clothing/mens-clothing.component';
 import { JeweleryComponent } from './features/jewelery/jewelery.component';
-import { WomensClothinComponent } from './features/womens-clothin/womens-clothin.component'
+import { WomensClothinComponent } from './features/womens-clothin/womens-clothin.component';
+import { CartComponent } from './features/cart/cart.component'
 
 @NgModule({
   declarations: [
@@ -27,13 +28,15 @@ import { WomensClothinComponent } from './features/womens-clothin/womens-clothin
     ElectronicsComponent,
     MensClothingComponent,
     JeweleryComponent,
-    WomensClothinComponent
+    WomensClothinComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

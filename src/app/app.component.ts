@@ -15,11 +15,11 @@ export class AppComponent implements OnInit{
 
   ngOnInit(): void {
   }
-  searchProduct() {
-    this.productService.searchProduct(this.title).pipe(
-      tap((data) => {
-        this.productBody.next(data)
-      })
-    ).subscribe()
-  }
+  // searchProduct() {
+  //   this.productService.searchProduct(this.title).pipe(
+  //     tap((data) => {
+  //       this.productBody.next(data)
+  //     })
+  //   ).subscribe()
+  // }
 }

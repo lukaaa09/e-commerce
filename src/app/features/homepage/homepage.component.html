@@ -12,6 +12,20 @@
         <ul>
             <li routerLink="/womens clothing">women's clothing</li>
         </ul>
+        <div>          
+            <img routerLink="/cart" style="cursor: pointer;" src="../../../assets/emptyshoppingcart_shopingcart_carritodelacompravacio_4565.png" alt="">
+            <span>{{totalItem}}</span>
+        </div>
+    </div>
+    <div class="price-range">
+        <form [formGroup]="form">
+            <input type="number" placeholder="Price-From $" formControlName="priceFrom">
+            <input type="number" placeholder="Price-Before $" formControlName="priceBefore">
+            <div>
+                <button>Search</button>
+            </div>
+
+        </form>
     </div>
     <div class="container">
         <div class="container-single" *ngFor="let item of products | async">
@@ -19,10 +33,12 @@
                 <img src="{{item.image}}" alt="">
             </div>
             <div class="container-description">
-                <span>{{item.title}}</span>
-                <span>Price {{item.price}}$</span>
+                <span class="title">{{item.title}}</span>
+                <span><strong>Price:</strong> {{item.price}}$</span>
                 <span>Rate {{item.rating.rate}}🌟</span>
                 <button (click)="getproduct(item.id)">View Details</button>
+                <br>
+                <button (click)="addToCart(item)">Add To Cart</button>
             </div>
         </div>
     </div>

@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { tap } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -25,5 +26,11 @@ export class CategoriesService {
     
   public getWomensClothing() {
     return this.http.get(`${this.baseUrl}/products/category/women's clothing`)
+  }
+
+  public getPrice() {
+    return this.http.get(`${this.baseUrl}/products`).pipe(
+      tap((data) => (data as unknown as any).price)
+    )
   }
 }
