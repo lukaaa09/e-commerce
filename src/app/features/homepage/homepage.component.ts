@@ -14,6 +14,7 @@ import { ProductsService } from 'src/app/core/services/products.service';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HomepageComponent implements OnInit {
+  public searchKey: string = ''
   public totalItem: number = 0
   public products: BehaviorSubject<IProducts[]> = new BehaviorSubject<IProducts[]>([])
   public categories: any
@@ -28,7 +29,7 @@ export class HomepageComponent implements OnInit {
 
   ngOnInit(): void {
     this.productService.getProducts().pipe(
-      tap((data: IProducts[]) => {
+      tap((data: any) => {
         this.products.next(data)
       })
     ).subscribe()

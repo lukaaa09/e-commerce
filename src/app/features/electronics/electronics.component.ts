@@ -8,9 +8,10 @@ import { CategoriesService } from 'src/app/core/services/categories.service';
   styleUrls: ['./electronics.component.scss']
 })
 export class ElectronicsComponent implements OnInit {
-
-  constructor(private categoriesService: CategoriesService) { }
+  public searchKey: string = ''
   electronics: any
+  constructor(private categoriesService: CategoriesService) { }
+  
   ngOnInit(): void {
     this.categoriesService.getElectronics().pipe(
       tap((data) => {

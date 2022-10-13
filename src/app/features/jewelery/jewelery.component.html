@@ -1,5 +1,11 @@
+<div class="form-container">
+    <form>
+        <input type="search" placeholder="searchProducts" [(ngModel)]="searchTerm" (keyup)="search($event)"
+            name="search">
+    </form>
+</div>
 <div class="container">
-    <div class="container-single" *ngFor="let item of jewelery ">
+    <div class="container-single" *ngFor="let item of jewelery | filter:searchKey:'title'">
         <div class="container-details">
             <img src="{{item.image}}" alt="">
         </div>

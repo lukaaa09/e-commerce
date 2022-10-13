@@ -1,5 +1,5 @@
-<div class="container" *ngFor="let item of electronics">
-    <div class="wrapper">
+<div class="container" >
+    <div class="wrapper"*ngFor="let item of electronics | filter:'WD ':'tittle'">
         <div class="img-container">
             <img src="{{item.image}}" alt="">
         </div>

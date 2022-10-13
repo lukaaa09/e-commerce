@@ -15,7 +15,8 @@ import { ElectronicsComponent } from './features/electronics/electronics.compone
 import { MensClothingComponent } from './features/mens-clothing/mens-clothing.component';
 import { JeweleryComponent } from './features/jewelery/jewelery.component';
 import { WomensClothinComponent } from './features/womens-clothin/womens-clothin.component';
-import { CartComponent } from './features/cart/cart.component'
+import { CartComponent } from './features/cart/cart.component';
+import { FilterPipe } from './shared/filter.pipe'
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { CartComponent } from './features/cart/cart.component'
     MensClothingComponent,
     JeweleryComponent,
     WomensClothinComponent,
-    CartComponent
+    CartComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,

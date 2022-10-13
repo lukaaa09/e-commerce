@@ -8,6 +8,7 @@ import { CategoriesService } from 'src/app/core/services/categories.service';
   styleUrls: ['./mens-clothing.component.scss']
 })
 export class MensClothingComponent implements OnInit {
+  public searchKey: string = ''
   menClothing: any
   constructor(private categoriesService: CategoriesService) { }
 
