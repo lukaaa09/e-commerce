@@ -11,12 +11,13 @@ import { ProductsService } from 'src/app/core/services/products.service';
   selector: 'app-homepage',
   templateUrl: './homepage.component.html',
   styleUrls: ['./homepage.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  // changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HomepageComponent implements OnInit {
   public searchKey: string = ''
+  public searchTerm: string = ''
   public totalItem: number = 0
-  public products: BehaviorSubject<IProducts[]> = new BehaviorSubject<IProducts[]>([])
+  public products: any
   public categories: any
   public form = new FormGroup({
     priceFrom: new FormControl('', [Validators.required]),
@@ -30,7 +31,7 @@ export class HomepageComponent implements OnInit {
   ngOnInit(): void {
     this.productService.getProducts().pipe(
       tap((data: any) => {
-        this.products.next(data)
+        this.products = data
       })
     ).subscribe()
     this.cartservice.getProducts().pipe(
@@ -38,7 +39,16 @@ export class HomepageComponent implements OnInit {
         this.totalItem = response.length
       })
     ).subscribe()
+    this.cartservice.search.subscribe((data: any) => {
+      this.searchKey = data
+    })
   }
+  search(event: any) {
+    this.searchTerm = (event.target as HTMLInputElement).value
+    console.log(this.searchTerm)
+    this.cartservice.search.next(this.searchTerm)
+  }
+  
   public addToCart(item: any) {
     this.cartservice.addToCart(item);
     alert('are you sure')

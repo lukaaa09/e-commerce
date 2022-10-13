@@ -1,7 +1,6 @@
 <div class="form-container">
     <form>
-        <input type="search" placeholder="searchProducts">
-        <input type="submit" placeholder="searchProducts">
+        <input type="search" placeholder="searchProducts" name="search" [(ngModel)]="searchTerm" (keyup)="search($event)">
     </form>
 </div>
 <div class="categories">
@@ -24,26 +23,16 @@
         <span>{{totalItem}}</span>
     </div>
 </div>
-<div class="price-range">
-    <form [formGroup]="form">
-        <input type="number" placeholder="Price-From $" formControlName="priceFrom">
-        <input type="number" placeholder="Price-Before $" formControlName="priceBefore">
-        <div>
-            <button>Search</button>
-        </div>
-
-    </form>
-</div>
-<div class="container">
-    <div class="container-single" *ngFor="let item of products | async">
+<div class="container" >
+    <div class="container-single"  *ngFor="let item of products  | filter:searchKey:'title'">
         <div class="container-details">
-            <img src="{{item.image}}" alt="">
+            <img (click)="getproduct(item.id)" style="cursor: pointer;" src="{{item.image}}" alt="">
         </div>
         <div class="container-description">
             <span class="title">{{item.title}}</span>
             <span><strong>Price:</strong> {{item.price}}$</span>
             <span>Rate {{item.rating.rate}}🌟</span>
-            <button (click)="getproduct(item.id)">View Details</button>
+            <!-- <button (click)="getproduct(item.id)">View Details</button> -->
             <br>
             <button (click)="addToCart(item)">Add To Cart</button>
         </div>
