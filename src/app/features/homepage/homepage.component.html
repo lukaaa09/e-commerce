@@ -1,7 +1,15 @@
 <div class="form-container">
-    <form>
-        <input type="search" placeholder="searchProducts" name="search" [(ngModel)]="searchTerm" (keyup)="search($event)">
-    </form>
+    <div class="items">
+        <form>
+            <input type="search" placeholder="searchProducts" name="search" [(ngModel)]="searchTerm" (keyup)="search($event)">
+        </form>
+        <div>
+            <img routerLink="/cart" style="cursor: pointer;"
+                src="../../../assets/emptyshoppingcart_shopingcart_carritodelacompravacio_4565.png" alt="">
+            <span>{{totalItem}}</span>
+        </div>
+    </div>
+   
 </div>
 <div class="categories">
     <h1>Categories</h1>
@@ -17,11 +25,6 @@
     <ul>
         <li routerLink="/womens clothing">women's clothing</li>
     </ul>
-    <div>
-        <img routerLink="/cart" style="cursor: pointer;"
-            src="../../../assets/emptyshoppingcart_shopingcart_carritodelacompravacio_4565.png" alt="">
-        <span>{{totalItem}}</span>
-    </div>
 </div>
 <div class="container" >
     <div class="container-single"  *ngFor="let item of products  | filter:searchKey:'title'">
@@ -32,9 +35,8 @@
             <span class="title">{{item.title}}</span>
             <span><strong>Price:</strong> {{item.price}}$</span>
             <span>Rate {{item.rating.rate}}🌟</span>
-            <!-- <button (click)="getproduct(item.id)">View Details</button> -->
             <br>
-            <button (click)="addToCart(item)">Add To Cart</button>
+            <button (click)="saveCart()">Add To Cart</button>
         </div>
     </div>
 </div>

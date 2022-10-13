@@ -18,6 +18,7 @@ export class HomepageComponent implements OnInit {
   public searchTerm: string = ''
   public totalItem: number = 0
   public products: any
+  public cartItem: any
   public categories: any
   public form = new FormGroup({
     priceFrom: new FormControl('', [Validators.required]),
@@ -42,6 +43,9 @@ export class HomepageComponent implements OnInit {
     this.cartservice.search.subscribe((data: any) => {
       this.searchKey = data
     })
+    if(localStorage.getItem('cart')) {
+      this.cartItem = JSON.parse(localStorage.getItem('cart')!)
+    }
   }
   search(event: any) {
     this.searchTerm = (event.target as HTMLInputElement).value
@@ -49,9 +53,17 @@ export class HomepageComponent implements OnInit {
     this.cartservice.search.next(this.searchTerm)
   }
   
-  public addToCart(item: any) {
-    this.cartservice.addToCart(item);
-    alert('are you sure')
+  // public addToCart(item: any) {
+  //   this.cartservice.addToCart(item);
+  //   alert('are you sure')
+  // }
+
+  public saveCart() {
+    let z = confirm('Do you want to add this item?')
+    if(z) {
+      this.cartItem.push(this.products)
+    }
+    localStorage.setItem('cart', JSON.stringify(this.cartItem))
   }
 
   public getproduct(id: number) {

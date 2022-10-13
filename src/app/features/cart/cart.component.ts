@@ -9,15 +9,19 @@ import { CartService } from 'src/app/core/services/cart.service';
 })
 export class CartComponent implements OnInit {
   public products: any
+  public cartItem: any
 
   constructor(private cartService: CartService) { }
 
   ngOnInit(): void {
-    this.cartService.getProducts().pipe(
-      tap((data) => {
-        this.products = data
-      })
-    ).subscribe()
+    // this.cartService.getProducts().pipe(
+    //   tap((data) => {
+    //     this.products = data
+    //   })
+    // ).subscribe()
+    if(localStorage.getItem('cart')) {
+      this.cartItem = JSON.parse(localStorage.getItem('cart')!)
+    }
   }
   public removeItem(item: any) {
     this.cartService.removeCartItem(item)

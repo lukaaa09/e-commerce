@@ -1,6 +1,6 @@
-<ng-container *ngIf="products.length !== 0">
+<ng-container *ngIf="cartItem.length !== 0">
     <div class="container">
-        <div class="container-single" *ngFor="let item of products; let i = index">
+        <div class="container-single" *ngFor="let item of cartItem; index as i">
             <div class="container-details">
                 <img src="{{item.image}}" alt="">
             </div>
@@ -15,8 +15,8 @@
     </div>
 </ng-container>
 
-<ng-container *ngIf="products.length === 0">
+<ng-container *ngIf="cartItem.length === 0"> 
     <div class="container">
         <h1 routerLink="/homepage">Shop Now</h1>
     </div>
-</ng-container>
+</ng-container> 
