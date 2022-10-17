@@ -25,7 +25,11 @@ export class CartComponent implements OnInit {
     }
   }
   public removeItem(id: number) {
-    this.cartItem = this.cartItem.filter((products: any) => products.id != id)
+    let cut = confirm('Are you sure')
+    if(cut){
+      this.cartItem = this.cartItem.filter((products: any) => products.id != id)
+    }
+    localStorage.setItem('cart', JSON.stringify(this.cartItem))
   }
   
 }
