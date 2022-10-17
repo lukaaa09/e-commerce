@@ -18,7 +18,7 @@ export class HomepageComponent implements OnInit {
   public searchTerm: string = ''
   public totalItem: number = 0
   public products: any
-  public cartItem: any
+  public cartItem: any = []
   public categories: any
   public form = new FormGroup({
     priceFrom: new FormControl('', [Validators.required]),
@@ -58,10 +58,12 @@ export class HomepageComponent implements OnInit {
   //   alert('are you sure')
   // }
 
-  public saveCart() {
+  public saveCart(id: number) {
+    let singleProduct = this.products.find((i: any) => i.id == id)
+    console.log(singleProduct)
     let z = confirm('Do you want to add this item?')
     if(z) {
-      this.cartItem.push(this.products)
+      this.cartItem.push(singleProduct)
     }
     localStorage.setItem('cart', JSON.stringify(this.cartItem))
   }
@@ -69,7 +71,6 @@ export class HomepageComponent implements OnInit {
   public getproduct(id: number) {
     this.router.navigateByUrl(`/products/${id}`).then()
   }
-
 
 
 

@@ -1,22 +1,21 @@
-<ng-container *ngIf="cartItem.length !== 0">
+<!-- <ng-container *ngIf="cartItem.length !== 0"> -->
     <div class="container">
         <div class="container-single" *ngFor="let item of cartItem; index as i">
             <div class="container-details">
                 <img src="{{item.image}}" alt="">
             </div>
             <div class="container-description">
-                <span class="title">{{item.title}}</span>
+                <span class="title">tittle: {{item.title}}</span>
                 <span><strong>Price:</strong> {{item.price}}$</span>
                 <span>Rate {{item.rating.rate}}🌟</span>
-                <button (click)="removeItem(item)">Remove Item</button>
+                <button (click)="removeItem(item.id)">Remove Item</button>
             </div>
         </div>
-        <button (click)="removeAll()">Remove All Item</button>
     </div>
-</ng-container>
+<!-- </ng-container> -->
 
-<ng-container *ngIf="cartItem.length === 0"> 
+<!-- <ng-container *ngIf="cartItem.length === 0"> 
     <div class="container">
         <h1 routerLink="/homepage">Shop Now</h1>
     </div>
-</ng-container> 
+</ng-container>  -->

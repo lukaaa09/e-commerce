@@ -27,7 +27,7 @@
     </ul>
 </div>
 <div class="container" >
-    <div class="container-single"  *ngFor="let item of products  | filter:searchKey:'title'">
+    <div class="container-single"  *ngFor="let item of products | filter:searchKey:'title'">
         <div class="container-details">
             <img (click)="getproduct(item.id)" style="cursor: pointer;" src="{{item.image}}" alt="">
         </div>
@@ -36,7 +36,7 @@
             <span><strong>Price:</strong> {{item.price}}$</span>
             <span>Rate {{item.rating.rate}}🌟</span>
             <br>
-            <button (click)="saveCart()">Add To Cart</button>
+            <button (click)="saveCart(item.id)">Add To Cart</button>
         </div>
     </div>
 </div>

@@ -9,7 +9,7 @@ import { CartService } from 'src/app/core/services/cart.service';
 })
 export class CartComponent implements OnInit {
   public products: any
-  public cartItem: any
+  public cartItem: any = []
 
   constructor(private cartService: CartService) { }
 
@@ -21,12 +21,11 @@ export class CartComponent implements OnInit {
     // ).subscribe()
     if(localStorage.getItem('cart')) {
       this.cartItem = JSON.parse(localStorage.getItem('cart')!)
+      console.log(this.cartItem)
     }
   }
-  public removeItem(item: any) {
-    this.cartService.removeCartItem(item)
+  public removeItem(id: number) {
+    this.cartItem = this.cartItem.filter((products: any) => products.id != id)
   }
-  public removeAll() {
-    this.cartService.removeAll()
-  }
+  
 }
