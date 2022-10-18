@@ -1,0 +1,60 @@
+img {
+    width: 170px;
+    height: 235px;
+}
+.container-header{
+    span{
+        font-size: 25px;
+        margin-top: 20px;
+    }
+}
+.container-header{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 23px;
+}
+.container-single{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border: 1px solid;    
+    margin-top: 40px;
+}
+.title{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 250px;
+    position: relative;
+    right: 40px;
+}
+.price{
+    position: relative;
+    right: 100px;
+    font-size: 19px;
+}
+
+button{
+    height: 30px;
+    background-color: rgb(255, 185, 10);
+    border: 1px solid green;
+    border-radius: 5px;
+    font-size: 17px;
+    color: white;
+    cursor: pointer;
+}
+
+h1{
+    cursor: pointer;
+    font-size: 50px;
+    margin-top: 300px;
+}
+:hover h1{
+    color: red;
+}
+.container1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

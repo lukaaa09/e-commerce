@@ -1,21 +1,35 @@
 <ng-container *ngIf="(currentProduct | async) as product">
     <div class="products">
-        <div class="imag-container">
             <img src="{{product.image}}" alt="">
-        </div>
-        <div class="details">
-            <span>
-                {{product.price}}
-            </span>
-            <span>
-                {{product.title}}
-            </span>
-            <span>
-                {{product.description}}
-            </span>
-            <span>
-                {{product.rating.rate}}
-            </span>
-        </div>
+            <div class="details">
+                <div class="tittle">
+                    <h1>Tittle</h1>
+                    <span>
+                        {{product.title}}
+                    </span>
+                </div>
+                <hr>
+                <div class="des">
+                    <h1>Description</h1>
+                    <span>
+                        {{product.description}}
+                    </span>
+                </div>
+                <hr>
+                <div class="price">
+                    <h1>Price</h1>
+                    <span>
+                        {{product.price}}$
+                    </span>
+                </div>
+                <hr>
+                <div class="rate">
+                    <h1>Rating</h1>
+                    <span>
+                        {{product.rating.rate}}🌟
+                    </span>
+                </div>
+                <hr>
+            </div>
     </div>
 </ng-container>

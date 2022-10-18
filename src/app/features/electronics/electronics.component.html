@@ -1,11 +1,18 @@
-<div class="container" >
-    <div class="wrapper"*ngFor="let item of electronics">
-        <div class="img-container">
-            <img src="{{item.image}}" alt="">
-        </div>
-        <div class="details">
-            <span>{{item.title}}</span>
-            <span>Price {{item.price}}$</span>
-            <span>Rate {{item.rating.rate}}🌟</span>
+<div class="container">
+    <div class="text">
+        <h1>Technics</h1>
+    </div>
+    <div class="container-header">
+        <span>Product Image</span>
+        <span>Product Tittle</span>
+        <span>Product Price</span>
+        <span>Product Rate</span>
+    </div>
+    <hr>
+    <div class="container-single" *ngFor="let item of electronics;">
+        <img src="{{item.image}}" alt="">
+        <span class="title"> {{item.title}}</span>
+        <span class="price"> {{item.price}}$</span>
+        <span style="font-size: 19px;">{{item.rating.rate}}🌟</span>
     </div>
 </div>

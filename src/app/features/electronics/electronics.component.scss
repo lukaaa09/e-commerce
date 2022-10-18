@@ -1,0 +1,44 @@
+img {
+    width: 170px;
+    height: 235px;
+}
+.container-header{
+    span{
+        font-size: 25px;
+        margin-top: 20px;
+    }
+}
+.container-header{
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 23px;
+}
+.container-single{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border: 1px solid;    
+    margin-top: 40px;
+}
+.title{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 250px;
+    position: relative;
+    right: 40px;
+}
+.price{
+    position: relative;
+    right: 100px;
+    font-size: 19px;
+}
+.text{
+    display: flex;
+    justify-content: center;
+}
+h1{
+    margin-bottom: 50px;
+    font-size: 40px;
+    color: red;
+}

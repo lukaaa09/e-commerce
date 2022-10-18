@@ -1,0 +1,47 @@
+img{
+    margin-left: 70px;
+    margin-top: 30px;
+    width: 500px;
+    height: 600px;
+}
+.products{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.details{
+    margin-left: 150px;
+    gap: 15px;
+
+}
+span{
+    font-size: 22px;
+}
+.rate{
+    span{
+        color: red;
+        font-size: 30px;
+    }
+}
+h1{
+    font-size: 45px;
+}
+.price{
+    span{
+        color: red;
+        font-size: 30px;
+    }
+}
+.tittle{
+    span{
+        font-size: 30px;
+        color: gray;
+    }
+}
+.des{
+    span{
+        font-size: 25px;
+        width: 90px;
+        color: gray;
+    }
+}

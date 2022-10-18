@@ -35,16 +35,19 @@ export class HomepageComponent implements OnInit {
         this.products = data
       })
     ).subscribe()
-    this.cartservice.getProducts().pipe(
-      tap((response) => {
-        this.totalItem = response.length
-      })
-    ).subscribe()
+    // add to cart from service before i used localstorage
+
+    // this.cartservice.getProducts().pipe(
+    //   tap((response) => {
+    //     this.totalItem = response.length
+    //   })
+    // ).subscribe()
     this.cartservice.search.subscribe((data: any) => {
       this.searchKey = data
     })
     if(localStorage.getItem('cart')) {
       this.cartItem = JSON.parse(localStorage.getItem('cart')!)
+      
     }
   }
   search(event: any) {
@@ -52,6 +55,7 @@ export class HomepageComponent implements OnInit {
     console.log(this.searchTerm)
     this.cartservice.search.next(this.searchTerm)
   }
+  // add to cart from service before i used localstorage
   
   // public addToCart(item: any) {
   //   this.cartservice.addToCart(item);
@@ -64,8 +68,10 @@ export class HomepageComponent implements OnInit {
     let z = confirm('Do you want to add this item?')
     if(z) {
       this.cartItem.push(singleProduct)
+      this.totalItem++
     }
     localStorage.setItem('cart', JSON.stringify(this.cartItem))
+
   }
 
   public getproduct(id: number) {
