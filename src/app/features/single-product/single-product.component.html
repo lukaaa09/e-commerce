@@ -1,35 +1,62 @@
 <ng-container *ngIf="(currentProduct | async) as product">
     <div class="products">
-            <img src="{{product.image}}" alt="">
-            <div class="details">
-                <div class="tittle">
-                    <h1>Tittle</h1>
-                    <span>
-                        {{product.title}}
-                    </span>
-                </div>
-                <hr>
-                <div class="des">
-                    <h1>Description</h1>
-                    <span>
-                        {{product.description}}
-                    </span>
-                </div>
-                <hr>
-                <div class="price">
-                    <h1>Price</h1>
-                    <span>
-                        {{product.price}}$
-                    </span>
-                </div>
-                <hr>
-                <div class="rate">
-                    <h1>Rating</h1>
-                    <span>
-                        {{product.rating.rate}}🌟
-                    </span>
-                </div>
-                <hr>
+        <img src="{{product.image}}" alt="">
+        <div class="details">
+            <div class="tittle">
+                <h1>Tittle</h1>
+                <span>
+                    {{product.title}}
+                </span>
             </div>
+            <hr>
+            <div class="des">
+                <h1>Description</h1>
+                <span>
+                    {{product.description}}
+                </span>
+            </div>
+            <hr>
+            <div class="price">
+                <h1>Price</h1>
+                <span>
+                    {{product.price}}$
+                </span>
+            </div>
+            <hr>
+            <div class="rate">
+                <h1>Rating</h1>
+                <span>
+                    {{product.rating.rate}}🌟
+                </span>
+            </div>
+            <hr>
+        </div>
     </div>
 </ng-container>
+<br>
+<br>
+<br>
+<div class="comments">
+    <h1>Review of products</h1>
+    <h3>Write a Comment</h3>
+    <app-form [activeComment]="activeComment" submitLabel="write" 
+    (handleSubmit)="addComment({text: $event.text, id: $event.id, parentId: null})"></app-form>
+    <button (click)="updateComments()">Update</button>
+    <br>
+    <br>
+    <div class="comments-container" *ngFor="let comments of commentsBody">
+        <div class="comments">
+            <div class="img-container">
+                <img src="../../../assets/149071.png" alt="">
+            </div>
+            <div class="right-part">
+                <div class="author">
+                    <span>{{comments.username}}</span>
+                </div>
+                <span>{{comments.body}}</span>
+                <button (click)="deleteComment(comments.id)">Delete</button>
+                <button (click)="editUser(comments)">Edit</button>
+            </div>
+        </div>
+    </div>
+</div>

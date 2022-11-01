@@ -16,7 +16,8 @@ import { MensClothingComponent } from './features/mens-clothing/mens-clothing.co
 import { JeweleryComponent } from './features/jewelery/jewelery.component';
 import { WomensClothinComponent } from './features/womens-clothin/womens-clothin.component';
 import { CartComponent } from './features/cart/cart.component';
-import { FilterPipe } from './shared/filter.pipe'
+import { FilterPipe } from './shared/filter.pipe';
+import { FormComponent } from './features/form/form.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { FilterPipe } from './shared/filter.pipe'
     JeweleryComponent,
     WomensClothinComponent,
     CartComponent,
-    FilterPipe
+    FilterPipe,
+    FormComponent,
   ],
   imports: [
     BrowserModule,

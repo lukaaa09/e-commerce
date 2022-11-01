@@ -1,47 +1,88 @@
-img{
+img {
     margin-left: 70px;
     margin-top: 30px;
     width: 500px;
     height: 600px;
 }
-.products{
+
+.products {
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.details{
+
+.details {
     margin-left: 150px;
     gap: 15px;
 
 }
-span{
+
+span {
     font-size: 22px;
 }
-.rate{
-    span{
+
+.rate {
+    span {
         color: red;
         font-size: 30px;
     }
 }
-h1{
+
+h1 {
     font-size: 45px;
 }
-.price{
-    span{
+
+.price {
+    span {
         color: red;
         font-size: 30px;
     }
 }
-.tittle{
-    span{
+
+.tittle {
+    span {
         font-size: 30px;
         color: gray;
     }
 }
-.des{
-    span{
+
+.des {
+    span {
         font-size: 25px;
         width: 90px;
         color: gray;
+    }
+}
+
+.img-container {
+    img {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+.comments-container {
+    display: flex;
+}
+
+.right-part {
+    span {
+        margin-left: 190px;
+        position: relative;
+        bottom: 80px;
+    }
+
+    button {
+        position: relative;
+        bottom: 83px;
+        margin-left: 10px;
+        background-color: rgb(46, 46, 177);
+        color: white;
+        border-radius: 5px;
+        width: 60px;
+        height: 30px;
+        cursor: pointer;
+        font-size: 16px;
+        border: none;
     }
 }
