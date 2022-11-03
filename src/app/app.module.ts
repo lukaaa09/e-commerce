@@ -18,6 +18,7 @@ import { WomensClothinComponent } from './features/womens-clothin/womens-clothin
 import { CartComponent } from './features/cart/cart.component';
 import { FilterPipe } from './shared/filter.pipe';
 import { FormComponent } from './features/form/form.component';
+import { BaselayoutComponent } from './baselayout/baselayout.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { FormComponent } from './features/form/form.component';
     CartComponent,
     FilterPipe,
     FormComponent,
+    BaselayoutComponent,
   ],
   imports: [
     BrowserModule,

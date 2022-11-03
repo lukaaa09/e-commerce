@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { BaselayoutComponent } from './baselayout/baselayout.component';
 import { CartComponent } from './features/cart/cart.component';
 import { ElectronicsComponent } from './features/electronics/electronics.component';
 import { HomepageComponent } from './features/homepage/homepage.component';
@@ -13,16 +14,42 @@ import { WomensClothinComponent } from './features/womens-clothin/womens-clothin
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'homepage',
-    pathMatch: 'full'
-  },
-  {
-    path: 'homepage',
-    component: HomepageComponent
-  },
-  {
-    path: 'products/:id',
-    component: SingleProductComponent
+    component: BaselayoutComponent,
+    children: [
+      {
+        path: 'Jewelery',
+        component: JeweleryComponent
+      },
+      {
+        path: 'products/:id',
+        component: SingleProductComponent
+      },
+      {
+        path: '',
+        pathMatch: 'full',
+        component: HomepageComponent
+      },
+      {
+        path: 'electronics',
+        component: ElectronicsComponent
+      },
+      {
+        path: 'Jewelery',
+        component: JeweleryComponent
+      },
+      {
+        path: 'mens clothing',
+        component: MensClothingComponent
+      },
+      {
+        path: 'womens clothing',
+        component: WomensClothinComponent
+      },
+      {
+        path: 'cart',
+        component: CartComponent
+      }
+    ]
   },
   {
     path: 'register',
@@ -32,25 +59,7 @@ const routes: Routes = [
     path: 'login',
     component: LoginComponent
   },
-  {
-    path: 'electronics',
-    component: ElectronicsComponent
-  },
-  {
-    path: 'Jewelery',
-    component: JeweleryComponent
-  },
-  {
-    path: 'mens clothing',
-    component: MensClothingComponent
-  },
-  {
-    path: 'womens clothing',
-    component: WomensClothinComponent
-  },{
-    path: 'cart',
-    component: CartComponent
-  }
+ 
 ];
 
 @NgModule({

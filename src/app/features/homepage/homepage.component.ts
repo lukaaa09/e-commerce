@@ -73,10 +73,10 @@ export class HomepageComponent implements OnInit {
     localStorage.setItem('cart', JSON.stringify(this.cartItem))
 
   }
-
   public getproduct(id: number) {
     this.router.navigateByUrl(`/products/${id}`).then()
   }
+  
 
 
 
