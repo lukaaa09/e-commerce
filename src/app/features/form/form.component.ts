@@ -12,15 +12,16 @@ export class FormComponent implements OnInit, OnChanges {
   @Input() initialText: string = ''
   @Input() activeComment: any
   @Output() handleSubmit = new EventEmitter<any>()
+  displayBtn: boolean = true
   form: any
 
   constructor() { }
   ngOnChanges(changes: SimpleChanges): void {
     let change: SimpleChange = changes['activeComment'];
-    console.log(change)
+    // console.log(change)
     if (!(<SimpleChange>change).firstChange && (change) && 
       (<SimpleChange>change).currentValue !== (<SimpleChange>change).previousValue) {
-        console.log(this.form)
+        // console.log(this.form)
       this.form.get('tittle').setValue(this.activeComment.body)
     }
 
@@ -32,7 +33,7 @@ export class FormComponent implements OnInit, OnChanges {
     })
   }
   public onSubmit() {
-    this.handleSubmit.emit({text: this.form.value.tittle, id: this.activeComment.id})
+    this.handleSubmit.emit({text: this.form.value.tittle, id: this.activeComment?.id})
     this.form.reset()
   }
 

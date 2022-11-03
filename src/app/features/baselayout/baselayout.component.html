@@ -1,0 +1,14 @@
+<div class="form-container">
+    <div class="items">
+        <form>
+            <input type="search" placeholder="searchProducts" name="search" [(ngModel)]="searchTerm" (keyup)="search($event)">
+        </form>
+        <div class="flex-img">
+                <img routerLink="/" style="cursor: pointer;" src="../../../assets/saxli.png" alt="">
+                <img routerLink="/cart" style="cursor: pointer;"
+                    src="../../../assets/emptyshoppingcart_shopingcart_carritodelacompravacio_4565.png" alt="">
+                <span>{{totalItem}}</span>
+        </div>
+    </div>
+</div>
+<router-outlet></router-outlet>

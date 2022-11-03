@@ -1,5 +1,4 @@
 <form [formGroup]="form" (ngSubmit)="onSubmit()">
     <textarea formControlName="tittle"></textarea>
     <button type="submit" [disabled]="form.invalid" class="write">{{submitLabel}}</button>
-    <button *ngIf="cancelButton" type="submit" class="cancel"> Cancel</button>
 </form>

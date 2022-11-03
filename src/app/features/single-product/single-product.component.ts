@@ -45,7 +45,7 @@ export class SingleProductComponent implements OnInit {
     ).subscribe()
   }
 
-  public addComment({ text, parentId, id}: { text: string, parentId: string | null, id: any }) {
+  public addComment({ text, parentId, id }: { text: string, parentId: string | null, id: any }) {
     console.log(id)
     this.commentsService.postComment(text, parentId).pipe(
       tap((createdComments) => {
@@ -58,17 +58,30 @@ export class SingleProductComponent implements OnInit {
       this.commentsBody = this.commentsBody.filter((v: any) => v.id != id)
     })
   }
-  updateComments() {
-    this.commentsService.updateComments(this.activeComment.id, this.commentsBody).pipe(
-      tap((comments) => {
-       console.log(comments)
+  updateComments(id: number, text: string) {
+    const commentToUpdate = {
+      ...this.activeComment, body: text
+    }
+    this.commentsService.updateComments(id, commentToUpdate).pipe(
+      tap((comments: any) => {
+        this.commentsBody = this.commentsBody.map((updatedComment: any) => {
+          if (updatedComment.id === comments.id) {
+            return comments
+          }
+          return updatedComment
+        })
       })
     ).subscribe()
   }
-
   editUser(comment: any) {
     this.activeComment = comment
-    console.log(this.activeComment.id)
+    this.displayBtn = true
   }
-
+  public submit({ text, parentId, id }: { text: string, parentId: string | null, id: any }) {
+    if (id) {
+      this.updateComments(id, text)
+    } else {
+      this.addComment({ text, parentId, id })
+    }
+  }
 }

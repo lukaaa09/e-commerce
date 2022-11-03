@@ -40,8 +40,8 @@
     <h1>Review of products</h1>
     <h3>Write a Comment</h3>
     <app-form [activeComment]="activeComment" submitLabel="write" 
-    (handleSubmit)="addComment({text: $event.text, id: $event.id, parentId: null})"></app-form>
-    <button (click)="updateComments()">Update</button>
+    (handleSubmit)="submit({text: $event.text, id: $event.id, parentId: null})"></app-form>
+    <br>
     <br>
     <br>
     <div class="comments-container" *ngFor="let comments of commentsBody">

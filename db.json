@@ -1,28 +1,28 @@
 {
   "comments": [
     {
-      "body": "luk",
+      "body": "luka",
       "parentId": null,
-      "createdAt": "2022-11-01T08:21:52.467Z",
+      "createdAt": "2022-11-03T12:00:58.434Z",
+      "userId": "1",
+      "username": "luka",
+      "id": 1
+    },
+    {
+      "body": "giorgi",
+      "parentId": null,
+      "createdAt": "2022-11-03T12:01:44.601Z",
       "userId": "1",
       "username": "luka",
       "id": 2
     },
     {
-      "body": "jhjhbjkbjk",
+      "body": "lukaa123",
       "parentId": null,
-      "createdAt": "2022-11-01T08:25:58.254Z",
+      "createdAt": "2022-11-03T12:49:51.299Z",
       "userId": "1",
       "username": "luka",
-      "id": 4
-    },
-    {
-      "body": "kjlhhjbhjbjhbh",
-      "parentId": null,
-      "createdAt": "2022-11-01T08:26:11.021Z",
-      "userId": "1",
-      "username": "luka",
-      "id": 5
+      "id": 3
     }
   ]
 }

@@ -18,7 +18,7 @@ import { WomensClothinComponent } from './features/womens-clothin/womens-clothin
 import { CartComponent } from './features/cart/cart.component';
 import { FilterPipe } from './shared/filter.pipe';
 import { FormComponent } from './features/form/form.component';
-import { BaselayoutComponent } from './baselayout/baselayout.component';
+import { BaselayoutComponent } from './features/baselayout/baselayout.component';
 
 @NgModule({
   declarations: [

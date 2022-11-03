@@ -1,4 +1,4 @@
-.items{
+.items {
     width: 100%;
     height: 50px;
     background-color: rgb(83, 83, 217);
@@ -6,15 +6,15 @@
     justify-content: space-between;
     align-items: center;
 
-    input{
+    input {
         margin-left: 40px;
         width: 340px;
         height: 30px;
         border-radius: 5px;
         border: 1px solid gray;
     }
-    
-    span{
+
+    span {
         margin-right: 30px;
         padding: 3px;
         padding-left: 4px;
@@ -22,6 +22,15 @@
         border-radius: 50%;
         background-color: red;
         color: white;
+    }
+    .flex-img{
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+    }
 
+    .home {
+        width: 20px;
+        height: 20px;
     }
 }
