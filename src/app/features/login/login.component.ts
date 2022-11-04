@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { BehaviorSubject, catchError, Observable, of, Subject, tap } from 'rxjs';
+import { IRegister } from 'src/app/core/interfaces/register-interface';
 import { RegisterService } from 'src/app/core/services/register.service';
 
 @Component({
@@ -21,30 +23,25 @@ export class LoginComponent implements OnInit {
       return subscriber.complete()
     }, 3000)
   })
-
-  loginForm = new FormGroup({
-    email: new FormControl('', [Validators.required, Validators.email]),
-    password: new FormControl('', [Validators.required])
-
+  public loginForm = new FormGroup({
+    email: new FormControl ('', [Validators.required, Validators.email]),
+    password: new FormControl('', [Validators.required, Validators.pattern("[A-Za-z0-9]+"), Validators.minLength(7)])
   })
-  constructor(private registerService: RegisterService) { }
+
+  constructor(private registerService: RegisterService, private router: Router) { }
 
   ngOnInit(): void {
-    this.myCustomObservable.subscribe({
-      next: (value) => console.log(value),
-      error: (err) => console.log(err),
-      complete:  () => console.log('observable finished')
-    })
+  
   }
   public loginMethod() {
-    this.registerService.loginUser(this.loginForm.value).pipe(
-      tap((response) => {
+    this.registerService.loginMethod(this.loginForm.value as any).pipe(
+      tap((response: any) => {
         localStorage.setItem('token', response.accessToken)
         alert('succesfully login')
-
+        this.router.navigateByUrl('/').then()
       }),
       catchError(() => {
-        alert('error while login')
+        alert('Error while login')
         return of({})
       })
     ).subscribe()

@@ -1,27 +1,34 @@
 {
   "comments": [
     {
-      "body": "luka",
+      "body": "hefgdasjkcbdcvkdsjbvdhcb",
       "parentId": null,
-      "createdAt": "2022-11-03T12:00:58.434Z",
+      "createdAt": "2022-11-04T09:43:59.863Z",
       "userId": "1",
       "username": "luka",
       "id": 1
+    }
+  ],
+  "users": [
+    {
+      "email": "tester@gmail.com",
+      "password": "$2a$10$N9tk9IZOMkbwepUqKwTdu.bWNQgdCbOeWIXnc03Q3RGEmxZoYQzQe",
+      "username": "lukaluka",
+      "confirmPassword": "",
+      "id": 1
     },
     {
-      "body": "giorgi",
-      "parentId": null,
-      "createdAt": "2022-11-03T12:01:44.601Z",
-      "userId": "1",
-      "username": "luka",
+      "email": "luka@gmail.com",
+      "password": "$2a$10$tQ3G23k4QhsIn.ZpI.VyGOpqaTofEhXZO.0ljyv0EDZa6fiDeT8sW",
+      "username": "saxeli",
+      "confirmPassword": "lukaluka",
       "id": 2
     },
     {
-      "body": "lukaa123",
-      "parentId": null,
-      "createdAt": "2022-11-03T12:49:51.299Z",
-      "userId": "1",
-      "username": "luka",
+      "email": "testing@gmail.com",
+      "password": "$2a$10$LCaYpYo1To4762FHf4xeLuzzv62E5/IPab9xIo/A2dm7KxdWwBH8C",
+      "username": "lukacho",
+      "confirmPassword": "luka1234",
       "id": 3
     }
   ]

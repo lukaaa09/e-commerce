@@ -76,9 +76,8 @@ export class HomepageComponent implements OnInit {
   public getproduct(id: number) {
     this.router.navigateByUrl(`/products/${id}`).then()
   }
+
   
-
-
 
 
 

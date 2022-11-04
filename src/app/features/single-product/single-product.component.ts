@@ -58,8 +58,8 @@ export class SingleProductComponent implements OnInit {
       this.commentsBody = this.commentsBody.filter((v: any) => v.id != id)
     })
   }
-  updateComments(id: number, text: string) {
-    const commentToUpdate = {
+ public updateComments(id: number, text: string): void {
+    const commentToUpdate: IComments = {
       ...this.activeComment, body: text
     }
     this.commentsService.updateComments(id, commentToUpdate).pipe(

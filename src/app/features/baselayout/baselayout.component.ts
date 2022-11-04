@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, RouterLink } from '@angular/router';
 import { CartService } from '../../core/services/cart.service';
 
 @Component({
@@ -9,7 +10,7 @@ import { CartService } from '../../core/services/cart.service';
 export class BaselayoutComponent implements OnInit {
   public totalItem: number = 0
   searchTerm: string = ''
-  constructor(private cartService: CartService) { }
+  constructor(private cartService: CartService, private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -17,6 +18,9 @@ export class BaselayoutComponent implements OnInit {
   public search(event: any) {
     this.searchTerm = (event.target as HTMLInputElement).value
     this.cartService.search.next(this.searchTerm)
+  }
+  navigatebylogin() {
+    this.router.navigateByUrl('/login').then()
   }
 
 }
