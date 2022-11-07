@@ -15,11 +15,9 @@ import { ProductsService } from 'src/app/core/services/products.service';
 })
 export class HomepageComponent implements OnInit {
   public searchKey: string = ''
-  public searchTerm: string = ''
   public totalItem: number = 0
-  public products: any
+  public products!: IProducts[]
   public cartItem: any = []
-  public categories: any
   public form = new FormGroup({
     priceFrom: new FormControl('', [Validators.required]),
     priceBefore: new FormControl('', [Validators.required])
@@ -31,39 +29,23 @@ export class HomepageComponent implements OnInit {
 
   ngOnInit(): void {
     this.productService.getProducts().pipe(
-      tap((data: any) => {
+      tap((data: IProducts[]) => {
         this.products = data
+        console.log(data)
       })
     ).subscribe()
-    // add to cart from service before i used localstorage
-
-    // this.cartservice.getProducts().pipe(
-    //   tap((response) => {
-    //     this.totalItem = response.length
-    //   })
-    // ).subscribe()
-    this.cartservice.search.subscribe((data: any) => {
+    this.cartservice.search.subscribe((data: string) => {
       this.searchKey = data
+      console.log(data)
     })
     if(localStorage.getItem('cart')) {
       this.cartItem = JSON.parse(localStorage.getItem('cart')!)
+      console.log(this.cartItem)
       
     }
   }
-  search(event: any) {
-    this.searchTerm = (event.target as HTMLInputElement).value
-    console.log(this.searchTerm)
-    this.cartservice.search.next(this.searchTerm)
-  }
-  // add to cart from service before i used localstorage
-  
-  // public addToCart(item: any) {
-  //   this.cartservice.addToCart(item);
-  //   alert('are you sure')
-  // }
-
-  public saveCart(id: number) {
-    let singleProduct = this.products.find((i: any) => i.id == id)
+  public saveCart(id: number): void {
+    let singleProduct = this.products.find((i: IProducts) => i.id == id)
     console.log(singleProduct)
     let z = confirm('Do you want to add this item?')
     if(z) {

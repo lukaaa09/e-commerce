@@ -1,7 +1,11 @@
 html {
     height: 100%;
 }
-
+.parent{
+    height: 100%;
+    width: 100%;
+    background-color: red;
+}
 body {
     margin: 0;
     padding: 0;
@@ -189,9 +193,8 @@ body {
     cursor: pointer;
 }
 
-span:hover {
+.reg:hover {
     background: #352e2e;
-    padding: 7px;
     border-radius: 5px;
     box-shadow: 0 0 5px #03e9f4,
         0 0 25px #03e9f4,

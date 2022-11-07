@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { catchError, of, tap } from 'rxjs';
-import { IRegister } from 'src/app/core/interfaces/register-interface';
+import { IUserPayload } from 'src/app/core/interfaces/register-interface';
 import { passwordValidator } from 'src/app/core/password-validator';
 import { RegisterService } from 'src/app/core/services/register.service';
 
@@ -28,7 +28,7 @@ export class RegisterComponent implements OnInit {
     this.router.navigateByUrl('/login').then()
   }
   public registerMethod() {
-    this.registerService.registerMethod(this.register.value as any).pipe(
+    this.registerService.registerMethod(this.register.value as IUserPayload).pipe(
       tap(() => {
         alert('Succesfully Register')
         this.register.reset()

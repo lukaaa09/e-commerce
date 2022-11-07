@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { tap } from 'rxjs';
+import { IProducts } from 'src/app/core/interfaces/protucts-interface';
 import { CategoriesService } from 'src/app/core/services/categories.service';
 
 @Component({
@@ -8,13 +9,12 @@ import { CategoriesService } from 'src/app/core/services/categories.service';
   styleUrls: ['./mens-clothing.component.scss']
 })
 export class MensClothingComponent implements OnInit {
-  public searchKey: string = ''
-  menClothing: any
+  menClothing!: IProducts[]
   constructor(private categoriesService: CategoriesService) { }
 
   ngOnInit(): void {
     this.categoriesService.getMensClothing().pipe(
-      tap((data) => {
+      tap((data: IProducts[]) => {
         this.menClothing = data
       })
     ).subscribe()

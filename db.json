@@ -1,12 +1,32 @@
 {
   "comments": [
     {
-      "body": "hefgdasjkcbdcvkdsjbvdhcb",
+      "body": "luka12",
       "parentId": null,
-      "createdAt": "2022-11-04T09:43:59.863Z",
-      "userId": "1",
+      "userId": 1,
       "username": "luka",
       "id": 1
+    },
+    {
+      "body": "luka",
+      "parentId": null,
+      "userId": 1,
+      "username": "luka",
+      "id": 2
+    },
+    {
+      "body": "luka",
+      "parentId": null,
+      "userId": 1,
+      "username": "luka",
+      "id": 3
+    },
+    {
+      "body": "komentari",
+      "parentId": null,
+      "userId": 5,
+      "username": "luka",
+      "id": 4
     }
   ],
   "users": [
@@ -30,6 +50,20 @@
       "username": "lukacho",
       "confirmPassword": "luka1234",
       "id": 3
+    },
+    {
+      "email": "lukacho@gmail.com",
+      "password": "$2a$10$ZFBcQLZeY3rpnyJ0g0HFaeFQR2QByt4iM0Q.0RZq0i9AgkSIBvUqC",
+      "username": "lukks",
+      "confirmPassword": "kurtanidze11",
+      "id": 4
+    },
+    {
+      "email": "some@gmail.com",
+      "password": "$2a$10$7rU3fFz1bcXA.F4E0hJkeO3t3uvALOcmm8yCebSy7SMhreLZC.QaK",
+      "username": "anime",
+      "confirmPassword": "123456789",
+      "id": 5
     }
   ]
 }

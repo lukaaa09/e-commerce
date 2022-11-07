@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BehaviorSubject, tap } from 'rxjs';
+import { IComment } from 'src/app/core/interfaces/comments-interface';
+import { IProducts } from 'src/app/core/interfaces/protucts-interface';
 import { CartService } from 'src/app/core/services/cart.service';
 
 @Component({
@@ -8,8 +10,7 @@ import { CartService } from 'src/app/core/services/cart.service';
   styleUrls: ['./cart.component.scss']
 })
 export class CartComponent implements OnInit {
-  public products: any
-  public cartItem: any = []
+  public cartItem!: IProducts[]
 
   constructor(private cartService: CartService) { }
 
@@ -27,7 +28,7 @@ export class CartComponent implements OnInit {
   public removeItem(id: number) {
     let cut = confirm('Are you sure')
     if(cut){
-      this.cartItem = this.cartItem.filter((products: any) => products.id != id)
+      this.cartItem = this.cartItem.filter((products: IProducts) => products.id != id)
     }
     localStorage.setItem('cart', JSON.stringify(this.cartItem))
   }

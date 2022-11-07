@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { BehaviorSubject, catchError, Observable, of, Subject, tap } from 'rxjs';
-import { IRegister } from 'src/app/core/interfaces/register-interface';
+import { ILogin } from 'src/app/core/interfaces/login-interface';
+import { IUserPayload } from 'src/app/core/interfaces/register-interface';
 import { RegisterService } from 'src/app/core/services/register.service';
 
 @Component({
@@ -34,9 +35,12 @@ export class LoginComponent implements OnInit {
   
   }
   public loginMethod() {
-    this.registerService.loginMethod(this.loginForm.value as any).pipe(
-      tap((response: any) => {
+    this.registerService.loginMethod(this.loginForm.value as IUserPayload).pipe(
+      tap((response: ILogin) => {
+        console.log(response)
         localStorage.setItem('token', response.accessToken)
+        let obj = {id: response.user.id, username: response.user.username } 
+        localStorage.setItem('user', JSON.stringify(obj))
         alert('succesfully login')
         this.router.navigateByUrl('/').then()
       }),

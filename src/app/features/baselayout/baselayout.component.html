@@ -1,15 +1,21 @@
 <div class="form-container">
     <div class="items">
         <form>
-            <input type="search" placeholder="searchProducts" name="search" [(ngModel)]="searchTerm" (keyup)="search($event)">
+            <input type="search" placeholder="searchProducts" name="search" [(ngModel)]="searchTerm"
+                (keyup)="search($event)">
         </form>
         <div class="flex-img">
-            <img (click)="navigatebylogin()" class="register" src="../../../assets/register_login_signup_icon_219991.png" alt="">
-                <img routerLink="/" style="cursor: pointer;" src="../../../assets/saxli.png" alt="">
-                <img routerLink="/cart" style="cursor: pointer;"
-                    src="../../../assets/emptyshoppingcart_shopingcart_carritodelacompravacio_4565.png" alt="">
-                <span>{{totalItem}}</span>
+            <img (click)="navigatebylogin()" class="register"
+                src="../../../assets/register_login_signup_icon_219991.png" alt="">
+            <img routerLink="/" style="cursor: pointer;" src="../../../assets/saxli.png" alt="">
+            <img routerLink="/cart" style="cursor: pointer;"
+                src="../../../assets/emptyshoppingcart_shopingcart_carritodelacompravacio_4565.png" alt="">
+            <span>{{totalItem}}</span>
         </div>
+        <span style="cursor: pointer;" (click)="logOut()">LogOut</span>
+
     </div>
 </div>
+
+
 <router-outlet></router-outlet>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
+import { RegisterService } from 'src/app/core/services/register.service';
 import { CartService } from '../../core/services/cart.service';
 
 @Component({
@@ -10,7 +11,10 @@ import { CartService } from '../../core/services/cart.service';
 export class BaselayoutComponent implements OnInit {
   public totalItem: number = 0
   searchTerm: string = ''
-  constructor(private cartService: CartService, private router: Router) { }
+  getUsername = localStorage.getItem('username')
+  constructor(private cartService: CartService,
+    private router: Router,
+    private resgisterService: RegisterService) { }
 
   ngOnInit(): void {
   }
@@ -22,5 +26,7 @@ export class BaselayoutComponent implements OnInit {
   navigatebylogin() {
     this.router.navigateByUrl('/login').then()
   }
-
+  public logOut() {
+    this.resgisterService.logOut()
+  }
 }
