@@ -3,7 +3,7 @@
     height: 50px;
     background-color: rgb(83, 83, 217);
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
 
     input {
@@ -40,4 +40,14 @@
 }
 img{
     cursor: pointer;
+}
+.categories{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    ul, li {
+        cursor: pointer;
+        list-style: none;
+    }
 }

@@ -48,17 +48,17 @@ const routes: Routes = [
       {
         path: 'cart',
         component: CartComponent
-      }
+      },
+      {
+        path: 'register',
+        component: RegisterComponent
+      },
+      {
+        path: 'login',
+        component: LoginComponent
+      },
     ]
-  },
-  {
-    path: 'register',
-    component: RegisterComponent
-  },
-  {
-    path: 'login',
-    component: LoginComponent
-  },
+  }
  
 ];
 

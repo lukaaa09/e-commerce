@@ -1,18 +1,30 @@
 <div class="form-container">
     <div class="items">
+        <div class="categories">
+            <h1>Categories</h1>
+            <ul>
+                <li routerLink="/Jewelery">Jewelery</li>
+            </ul>
+            <ul>
+                <li routerLink="/electronics">electronics</li>
+            </ul>
+            <ul>
+                <li routerLink="/mens clothing">men's clothing</li>
+            </ul>
+            <ul>
+                <li routerLink="/womens clothing">women's clothing</li>
+            </ul>
+        </div>
         <form>
             <input type="search" placeholder="searchProducts" name="search" [(ngModel)]="searchTerm"
                 (keyup)="search($event)">
         </form>
-        <div class="flex-img">
-            <img (click)="navigatebylogin()" class="register"
-                src="../../../assets/register_login_signup_icon_219991.png" alt="">
-            <img routerLink="/" style="cursor: pointer;" src="../../../assets/saxli.png" alt="">
-            <img routerLink="/cart" style="cursor: pointer;"
-                src="../../../assets/emptyshoppingcart_shopingcart_carritodelacompravacio_4565.png" alt="">
-            <span>{{totalItem}}</span>
-        </div>
-        <span style="cursor: pointer;" (click)="logOut()">LogOut</span>
+        <img (click)="navigatebylogin()" class="register" src="../../../assets/register_login_signup_icon_219991.png"
+            alt="">
+        <img routerLink="/" style="cursor: pointer;" src="../../../assets/saxli.png" alt="">
+        <img routerLink="/cart" style="cursor: pointer;"
+            src="../../../assets/emptyshoppingcart_shopingcart_carritodelacompravacio_4565.png" alt="">
+        <!-- <span style="cursor: pointer;" (click)="logOut()">LogOut</span> -->
 
     </div>
 </div>
