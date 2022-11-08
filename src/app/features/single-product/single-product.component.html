@@ -54,8 +54,8 @@
                     <span>{{comments.username}}</span>
                 </div>
                 <span>{{comments.body}}</span>
-                <button (click)="deleteComment(comments.id)" *ngIf="loggedUser.id == comments.userId">Delete</button>
-                <button (click)="editUser(comments)">Edit</button>
+                <button (click)="deleteComment(comments.id)"*ngIf="loggedUser.id == comments.userId">Delete</button>
+                <button (click)="editUser(comments)" *ngIf="loggedUser.id == comments.userId">Edit</button>
             </div>
         </div>
     </div>

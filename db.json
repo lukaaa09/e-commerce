@@ -1,32 +1,16 @@
 {
   "comments": [
     {
-      "body": "luka12",
-      "parentId": null,
-      "userId": 1,
-      "username": "luka",
+      "username": "lukakurtanidze",
+      "userId": 6,
+      "body": "perfect product",
       "id": 1
     },
     {
-      "body": "luka",
-      "parentId": null,
-      "userId": 1,
-      "username": "luka",
+      "username": "teknikosi",
+      "userId": 7,
+      "body": "sauketeso produkcia",
       "id": 2
-    },
-    {
-      "body": "luka",
-      "parentId": null,
-      "userId": 1,
-      "username": "luka",
-      "id": 3
-    },
-    {
-      "body": "komentari",
-      "parentId": null,
-      "userId": 5,
-      "username": "luka",
-      "id": 4
     }
   ],
   "users": [
@@ -64,6 +48,20 @@
       "username": "anime",
       "confirmPassword": "123456789",
       "id": 5
+    },
+    {
+      "email": "tech@gmail.com",
+      "password": "$2a$10$29pj9IAI3qqpDT5vJLuOqeabcC4xwIsWHE9WxDEvqf9XEX4YOS2Gu",
+      "username": "lukakurtanidze",
+      "confirmPassword": "987654321",
+      "id": 6
+    },
+    {
+      "email": "kaci@gmail.com",
+      "password": "$2a$10$BF8mGmhtf4Jx8X0yu13eXebnpVQdsQN4uitfqtV/r/MDuYOU27L7O",
+      "username": "teknikosi",
+      "confirmPassword": "lukaluka09",
+      "id": 7
     }
   ]
 }

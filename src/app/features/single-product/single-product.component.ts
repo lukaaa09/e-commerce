@@ -2,12 +2,15 @@ import { Component, Input, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { BehaviorSubject, Observable, tap } from 'rxjs';
+import { ICreateComment } from 'src/app/core/interfaces/createcomment.model';
 import { IComment } from 'src/app/core/interfaces/comments-interface';
 import { IloggedUser } from 'src/app/core/interfaces/logged-user-interface';
 import { CommentsService } from 'src/app/core/services/comments.service';
 import { ProductsService } from 'src/app/core/services/products.service';
 import { RegisterService } from 'src/app/core/services/register.service';
+import { UserService } from 'src/app/core/services/user.service';
 import { IProducts } from '../../core/interfaces/protucts-interface'
+import { JsonPipe } from '@angular/common';
 
 @Component({
   selector: 'app-single-product',
@@ -24,6 +27,7 @@ export class SingleProductComponent implements OnInit {
   loggedUser: IloggedUser
 
   constructor(private productService: ProductsService,
+    private userService: UserService,
     private activatedRoute: ActivatedRoute,
     private commentsService: CommentsService,
     private registerService: RegisterService) {
@@ -52,8 +56,15 @@ export class SingleProductComponent implements OnInit {
     ).subscribe()
   }
 
-  public addComment({ text, parentId, id }: { text: string, parentId: string | null, id: number }) {
-    this.commentsService.postComment(text, parentId).pipe(
+  public addComment({ text, parentId, id, }:{ text: string, parentId: string | null, id: number }) {
+    const user: IloggedUser = JSON.parse(localStorage.getItem('user')!)
+    const comment: ICreateComment = {
+      username: user.username,
+      id: id,
+      userId: user.id,
+      body: text
+    }
+    this.commentsService.postComment(comment).pipe(
       tap((createdComments) => {
         this.commentsBody = [... this.commentsBody, createdComments]
       })

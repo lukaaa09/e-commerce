@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { IComment } from '../interfaces/comments-interface';
+import { ICreateComment } from '../interfaces/createcomment.model';
 
 @Injectable({
   providedIn: 'root'
@@ -13,13 +14,8 @@ export class CommentsService {
   public getComments(): Observable<IComment[]>{
     return this.http.get<IComment[]>(`${this.baseUrl}/comments`)
   }
-  public postComment(text: string, parentId: string | null): Observable<IComment>{
-    return this.http.post<IComment>(`${this.baseUrl}/comments`, {
-      body: text,
-      parentId,
-      userId: 1,
-      username: 'luka'
-    })
+  public postComment(model: ICreateComment): Observable<IComment>{
+    return this.http.post<IComment>(`${this.baseUrl}/comments`, model)
   } 
   public deleteComment(id: number) {
     return this.http.delete(`${this.baseUrl}/comments/${id}`)

@@ -1,18 +1,3 @@
-<div class="categories">
-    <h1>Categories</h1>
-    <ul>
-        <li routerLink="/Jewelery">Jewelery</li>
-    </ul>
-    <ul>
-        <li routerLink="/electronics">electronics</li>
-    </ul>
-    <ul>
-        <li routerLink="/mens clothing">men's clothing</li>
-    </ul>
-    <ul>
-        <li routerLink="/womens clothing">women's clothing</li>
-    </ul>
-</div>
 <div class="container" >
     <div class="container-single"  *ngFor="let item of products | filter:searchKey:'title'">
         <div class="container-details">
